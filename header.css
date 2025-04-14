@@ -1,0 +1,45 @@
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+header {
+  background-color: #002962;
+  height: 80px;
+}
+
+.container {
+  clear: both;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+nav {
+  float: right;
+  margin-right: 170px;
+}
+
+.logo img {
+  float: left;
+  height: 35px;
+  width: auto;
+  margin-left: 170px;
+}
+
+ul li {
+  display: inline-block;
+  padding: 20px;
+  font-size: 16px;
+  font-family: Raleway, sans-serif;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: #46b1e7;
+}

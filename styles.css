@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+#home {
+    background-color: #f0f0f0;
+    padding: 100px 0; /* padding vertical apenas */
+  }
+  
+  .caixa {
+    background-image: url('https://images2.imgbox.com/3e/a2/uwiZUpIm_o.png');
+    background-size: 100% 100%; /* faz a imagem cobrir 100% do espaço da div */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 70px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 200px); /* respeita margens laterais */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .sub-caixa {
+    background-color: #46b1e7; /* ou #fff se quiser branco */
+    color: white; /* troque para black se fundo for claro */
+    padding: 40px 40px;
+    border-radius: 8px;
+    max-width: 450px; /* limita a largura */
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2; /* maior, fica na frente */
+  }
+
+  .sub-caixa {
+    /* ... seus estilos atuais ... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .sub-caixa:hover {
+    transform: scale(0.95); /* diminui um pouco */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* um pouco mais de sombra */
+  }
+  .sub-caixa h1 {
+    font-size: 32px;         /* tamanho maior */
+    font-weight: 700;        /* negrito */
+    color: #ffffff;          /* dourado opcional */
+    margin-bottom: 10px;
+  }
+  
+  .sub-caixa p {
+    font-size: 18px;         /* tamanho do texto */
+    font-weight: 400;        /* peso regular */
+    line-height: 1.5;
+    color: #fff;             /* mantém branco ou ajusta como quiser */
+  }
+  
+  .sub-caixa .destaque {
+    font-weight: bold;
+    color: #ffb347;          /* cor de destaque */
+  }
+
+  .botao-conferir {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #002962;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .botao-conferir:hover {
+    background-color: #365685;
+    color: #ffffff;
+  }
+
+  .piscina-flutuante {
+    position: absolute;
+    bottom: -2.5vw;
+    right: -5vw;         /* empurra um pouco pra fora */
+    width: 55vw;         /* tamanho proporcional à tela */
+    max-width: 1000px;    /* nunca passa disso */
+    height: auto;        /* mantém a proporção da imagem */
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .wave-container {  
+    height: 20vh;
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  
+  .wave-container::before {   
+    content: "";
+    width: 100%;
+    height: 94px;
+    position: absolute;
+    bottom: -0.3%;
+    left: 0;
+    background-size: auto;
+    background-repeat: repeat no-repeat;
+    background-position: 46vw bottom;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 134' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 0C22.4434 -1 28.9842 2 55 24C94.1849 54 121.997 57 158.5 58C198.5 60 200 44 240 52C280 59 320 89 360 89C400 89 440 59 480 54C520 49 560 69 600 84C640 99 680 109 720 114C760 119 800 119 840 104C880 89 920 59 960 62C1000 64 1040 99 1080 94C1120 89 1127.5 59 1147.5 37C1171.48 11 1185.65 0 1200 0V134H1180C1160 134 1120 134 1080 134C1040 134 1000 134 960 134C920 134 880 134 840 134C800 134 760 134 720 134C680 134 640 134 600 134C560 134 520 134 480 134C440 134 400 134 360 134C320 134 280 134 240 134C200 134 160 134 120 134C80 134 40 134 20 134H0V0.0103865Z' fill='%2346B1E7'/></svg>");
+  }
+  
+  @media(max-width:850px) {
+    .wave-container::before {    
+      height: 47px
+    }  
+  }
+
+  #info {
+    background-color: #f9f9f9;
+    padding: 60px 100px;
+  }
+  
+  .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px; /* 15px vertical, 30px horizontal */
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .card {
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 140px; /* ou o tamanho que preferir */
+    text-align: center;
+    font-family: sans-serif;
+  
+    /* Centralização vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #002962;
+
+  }
+
+  .card {
+    /* ... seus estilos atuais ... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(0.95); /* diminui um pouco */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* um pouco mais de sombra */
+  }
+  
+  .numero-circulo {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 50px;
+    height: 50px;
+    background-color: #002962;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .break {
+    flex-basis: 100%;
+    height: 0;
+    margin-bottom: -10px; /* reduz espaço extra após o break */
+  }
+
+  #services {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px; /* 60px em cima e embaixo, 20px nos lados */
+    background-color: #46b1e7; /* só pra testar */
+  }
+
+  #services h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #002962;
+    margin-bottom: 60px;
+  }
+
+  .scroll-down-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  background-color: #0059a9; /* azul da bolinha */
+  color: white;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  position: absolute; /* ou fixed */
+  bottom: 30px;
+  right: 70px; /* ou onde quiser posicionar */
+  z-index: 10;
+  animation: bounce 1.5s infinite;
+}
+
+.scroll-down-btn:hover {
+  transform: translateY(5px);
+}
+
+.arrow-down {
+  display: block;
+  transform: rotate(0deg);
+}
+
+/* Animação */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(35px);
+  }
+}
+
+.scroll-down-btn:hover {
+  animation-play-state: paused;
+}
+
+  .wave-container2 {  
+    height: 20vh;
+    background-color: #46b1e7;
+    position: relative;
+  }
+  
+  .wave-container2::before {   
+    content: "";
+    width: 100%;
+    height: 98px;
+    position: absolute;
+    bottom: -0.3%;
+    left: 0;
+    background-size: auto;
+    background-repeat: repeat no-repeat;
+    background-position: 24vw bottom;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 134' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 0C22.4434 -1 28.9842 2 55 24C94.1849 54 121.997 57 158.5 58C198.5 60 200 44 240 52C280 59 320 89 360 89C400 89 440 59 480 54C520 49 560 69 600 84C640 99 680 109 720 114C760 119 800 119 840 104C880 89 920 59 960 62C1000 64 1040 99 1080 94C1120 89 1127.5 59 1147.5 37C1171.48 11 1185.65 0 1200 0V134H1180C1160 134 1120 134 1080 134C1040 134 1000 134 960 134C920 134 880 134 840 134C800 134 760 134 720 134C680 134 640 134 600 134C560 134 520 134 480 134C440 134 400 134 360 134C320 134 280 134 240 134C200 134 160 134 120 134C80 134 40 134 20 134H0V0.0103865Z' fill='%23f0f0f0'/></svg>");
+  }
+  
+  @media(max-width:850px) {
+    .wave-container::before {    
+      height: 49px
+    }  
+  }
+
+  .card2-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-top: 100px; /* <-- Isso adiciona espaço só no topo */
+    padding-bottom: 70px; /* <-- Isso adiciona espaço só no topo */
+  }
+  
+  .card2-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  margin-top: -1.5vw; /* valor proporcional à largura da tela */
+  }
+
+  .card2 {
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .light-blue {
+    background-color: #3db5f1;
+  }
+  
+  .dark-blue {
+    background-color: #0077c8;
+  }
+  
+  .card2-label {
+    position: absolute;
+    bottom: -25px;
+    background-color: white;
+    padding: 16px 24px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    color: #002f6c;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .card2 {
+    /* ... seus estilos atuais ... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card2:hover {
+    transform: scale(0.95); /* diminui um pouco */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* um pouco mais de sombra */
+  }
+
+  #contato {
+    background-color: #f0f0f0;
+    padding: 100px 20px;
+  }
+  
+  #contato h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #002962;
+    margin-bottom: 25px;
+    font-weight: 700; /* ou 800 se quiser ainda mais forte */
+  }
+
+  .contato-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; /* chave pra posicionar os respingos em relação a ele */
+  }
+  
+  .contato-box textarea {
+    resize: none;
+  }
+
+  .contato-box h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .contato-descricao {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+  
+  .contato-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contato-box input,
+  .contato-box textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+  
+  .contato-box button {
+    padding: 12px;
+    background-color: #002962;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contato-box button:hover {
+    background-color: #46b1e7;
+  }
+
+  /* respingos */
+.respingo {
+  position: absolute;
+  opacity: 100;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.respingo-esquerda {
+  left: -190px;
+  bottom: 0%;
+  width: 160px;
+}
+
+.respingo-direita {
+  right: -160px;
+  top: 0%;
+  width: 120px;
+}
+
+  footer {
+    background-color: #002962;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-logo h2 {
+    margin-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .footer-links {
+    margin-bottom: 20px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #46b1e7;
+  }
+  
+  .footer-copy p {
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .wave-container3 {  
+    height: 10vh;
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  
+  .wave-container3::before {   
+    content: "";
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: -0.3%;
+    left: 0;
+    background-size: auto;
+    background-repeat: repeat no-repeat;
+    background-position: 6vw bottom;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 103' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C19.5523 2 32.2291 4 51.5 7C104.5 14 200 33 300 50C400 68 500 85 600 78C700 71 800 40 900 23C987.526 4 1085.36 -1 1150 0C1169.54 -1 1180.49 0 1200 1V103H1150C1100 103 1000 103 900 103C800 103 700 103 600 103C500 103 400 103 300 103C200 103 100 103 50 103H0V1.98128Z' fill='%23002962'/></svg>");
+  }
+  
+  @media(max-width:850px) {
+    .wave-container3::before {    
+      height: 30px
+    }  
+  }
